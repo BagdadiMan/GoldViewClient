@@ -1,9 +1,9 @@
 <template>
     <div class="hospital-data">
         <div class="data">
-            <div class="controls">
+            <!-- <div class="controls">
                 BACK
-            </div>
+            </div> -->
             <DataContainer 
             :name="name" 
             :ventilators="ventilators" 
@@ -49,9 +49,7 @@ export default {
              return "room";
         }
     },
-     async mounted() {
-         console.log(this.$route.name )
-         console.log(this.$route.params)
+     async created() {
         if(this.$route.name == "Hospital"){
             const response = await api.departments().getDepartmentsByHospitalID(this.$route.params.id);
             this.items = response.data;
@@ -59,9 +57,6 @@ export default {
             const response = await api.rooms().getRoomsByDepartmentID(this.$route.params.dept);
             this.items = response.data;
         }
-
-        console.log(this.items)
-
     },
     async updated() {
         if(this.$route.name == "Hospital"){

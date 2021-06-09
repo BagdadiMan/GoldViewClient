@@ -28,19 +28,59 @@ export default {
     },
 
     async mounted() {
-         console.log(this.$route.name )
-         console.log(this.$route.params)
         if(this.$route.name == "Hospital"){
-            const response = await api.departments().getDepartmentsByHospitalID(this.$route.params.id);
-            this.items = response.data;
+            const response = await api.departments().getPatientByHospitalID(this.$route.params.id);
+            this.patients= response.data;
+
+            const response2 = await api.departments().getAvailableBedsByHospitalID(this.$route.params.id);
+            this.avilableBeds= response2.data;
+
+            const response3 = await api.departments().getVentilatorsByHospitalID(this.$route.params.id);
+            this.ventilators= response3.data;
+
+            const response4 = await api.departments().getAvailableVentilatorsByHospitalID(this.$route.params.id);
+            this.avilableVentilators= response4.data;
         } else if(this.$route.name == "Department"){
-            const response = await api.rooms().getRoomsByDepartmentID(this.$route.params.dept);
-            this.items = response.data;
+         const response = await api.departments().getPatientByDepartmentID(this.$route.params.id);
+            this.patients= response.data;
+
+            const response2 = await api.departments().getAvailableBedsByDepartmentID(this.$route.params.id);
+            this.avilableBeds= response2.data;
+
+            const response3 = await api.departments().getVentilatorsByDepartmentID(this.$route.params.id);
+            this.ventilators= response3.data;
+
+            const response4 = await api.departments().getAvailableVentilatorsByDepartmentID(this.$route.params.id);
+            this.avilableVentilators= response4.data;
         }
-
-        console.log(this.items)
-
     },
+    // async updated() {
+    //     if(this.$route.name == "Hospital"){
+    //         const response = await api.departments().getPatientByDepartmentID(this.$route.params.id);
+    //         this.patients= response.data;
+
+    //         const response2 = await api.departments().getAvailableBedsByDepartmentID(this.$route.params.id);
+    //         this.avilableBeds= response2.data;
+
+    //         const response3 = await api.departments().getVentilatorsByDepartmentID(this.$route.params.id);
+    //         this.ventilators= response3.data;
+
+    //         const response4 = await api.departments().getAvailableVentilatorsByDepartmentID(this.$route.params.id);
+    //         this.avilableVentilators= response4.data;
+    //     } else if(this.$route.name == "Department"){
+    //         const response = await api.rooms().getPatientByRoomtID(this.$route.params.id);
+    //         this.patients= response.data;
+
+    //         const response2 = await api.rooms().getAvailableBedsByRoomID(this.$route.params.id);
+    //         this.avilableBeds= response2.data;
+
+    //         const response3 = await api.rooms().getVentilatorsByRoomID(this.$route.params.id);
+    //         this.ventilators= response3.data;
+            
+    //         const response4 = await api.rooms().getAvailableVentilatorsByRoomID(this.$route.params.id);
+    //         this.avilableVentilators= response4.data;
+    //     }
+    // },
 
     created() {
         // setTimeout(() => { this.isLoading = false }, 1000)
