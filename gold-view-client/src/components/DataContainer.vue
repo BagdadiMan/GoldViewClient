@@ -8,6 +8,8 @@
 </template>
     
 <script>
+import api from "../api/api";
+
 export default {
     name: "hospitalname",
     components: {
@@ -23,10 +25,21 @@ export default {
         avilableBeds: Number,
         ventilators: Number,
         avilableVentilators: Number,
-        name: String
     },
 
-    computed: {
+    async mounted() {
+         console.log(this.$route.name )
+         console.log(this.$route.params)
+        if(this.$route.name == "Hospital"){
+            const response = await api.departments().getDepartmentsByHospitalID(this.$route.params.id);
+            this.items = response.data;
+        } else if(this.$route.name == "Department"){
+            const response = await api.rooms().getRoomsByDepartmentID(this.$route.params.dept);
+            this.items = response.data;
+        }
+
+        console.log(this.items)
+
     },
 
     created() {

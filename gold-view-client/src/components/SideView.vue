@@ -6,13 +6,13 @@
         <router-link
           style="text-decoration:none"
           v-for="item in items"
-          :key="item.title"
-          :to="{path:`${title}/${item.title}`}"
+          :key="item.id"
+          :to="{path:`${title}/${item.id}`}"
           append
         >
           <v-list-item style="background: #FFAB91; margin-bottom: 12px" link>
             <v-list-item-content>
-              <v-list-item-title style="color: #FFFFFF;">{{item.title}}</v-list-item-title>
+              <v-list-item-title style="color: #FFFFFF;">{{item.name}}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </router-link>
