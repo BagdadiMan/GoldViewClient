@@ -1,7 +1,20 @@
 <template>
-  <div id="app">
+
+  <v-app id="app">
+    <v-container>
+    <h1 class="first-title">GoldView</h1>
+    <p class="second-title">Hospitals view</p>
+    <div class="pl-8 scala-content">
+      <p class="text">Sick</p>
+      <div>
+          <div class="scala">
+          </div>
+      </div>
+      <p class="text">Very Sick</p>
+    </div>
     <router-view/>
-  </div>
+    </v-container>
+  </v-app>
 </template>
 
 <style lang="scss">
@@ -25,4 +38,29 @@
     }
   }
 }
+
+.first-title {
+  font-size: 10vh;
+}
+
+.second-title {
+  font-size: 5vh;
+}
+
+.scala {
+    background-color: rgb(53, 177, 235);
+    width: 43vw;
+    padding: 1vh;
+    margin: 1vh;
+    border-radius: 4vh;
+}
+
+
+.scala-content {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+
+}
+
 </style>

@@ -4,6 +4,7 @@ import Hospital from '../views/Hospital.vue'
 import Home from '../views/Home.vue'
 import Department from '../views/Department.vue'
 import Room from '../views/Room.vue'
+import DataView from '../views/DataView.vue'
 
 Vue.use(VueRouter)
 
@@ -14,6 +15,7 @@ const routes = [
     component: Home
   },
   {
+
     path: '/hospital/:id',
     name: 'Hospital',
     component: Hospital
@@ -27,6 +29,10 @@ const routes = [
     path: '/hospital/:id/department/:dept/room/:room',
     name: 'Room',
     component: Room
+  },
+    path: '/dataView',
+    name: 'dataView',
+    component: DataView
   }
 ]
 
