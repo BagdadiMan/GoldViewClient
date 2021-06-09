@@ -1,0 +1,32 @@
+{
+  "name": "GoldViewClient",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "vue-router": "^3.5.1",
+    "vuetify": "^2.4.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-router": "^4.5.13",
+    "sass": "~1.32.0",
+    "sass-loader": "^10.0.0",
+    "vue-cli-plugin-vuetify": "~2.4.1",
+    "vuetify-loader": "^1.7.0"
+  },
+  "bugs": {
+    "url": "https://github.com/BagdadiMan/GoldViewClient/issues"
+  },
+  "homepage": "https://github.com/BagdadiMan/GoldViewClient#readme",
+  "keywords": [],
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BagdadiMan/GoldViewClient.git"
+  }
+}

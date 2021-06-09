@@ -1,55 +1,66 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
+  <v-app id="app">
+    <v-container>
+    <h1 class="first-title">GoldView</h1>
+    <p class="second-title">Hospitals view</p>
+    <div class="pl-8 scala-content">
+      <p class="text">Sick</p>
+      <div>
+          <div class="scala">
+          </div>
       </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-main>
-      <router-view/>
-    </v-main>
+      <p class="text">Very Sick</p>
+    </div>
+    <router-view/>
+    </v-container>
   </v-app>
 </template>
 
-<script>
+<style lang="scss">
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
 
-export default {
-  name: 'App',
+#nav {
+  padding: 30px;
 
-  data: () => ({
-    //
-  }),
-};
-</script>
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+
+.first-title {
+  font-size: 10vh;
+}
+
+.second-title {
+  font-size: 5vh;
+}
+
+.scala {
+    background-color: rgb(53, 177, 235);
+    width: 43vw;
+    padding: 1vh;
+    margin: 1vh;
+    border-radius: 4vh;
+}
+
+
+.scala-content {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+
+}
+
+</style>
