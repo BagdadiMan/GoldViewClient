@@ -8,6 +8,7 @@
   },
   "main": "index.js",
   "dependencies": {
+    "axios": "^0.21.1",
     "vue-router": "^3.5.1",
     "vuetify": "^2.4.0"
   },

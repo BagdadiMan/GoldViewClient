@@ -1,6 +1,6 @@
 <template>
     <div class="frame">
-        <p class="data-text">Patiants: {{patiants}}</p>
+        <p class="data-text">Patients: {{patients}}</p>
         <p class="data-text">Available beds: {{avilableBeds}}</p>
         <p class="data-text">Ventilators: {{ventilators}}</p>
         <p class="data-text">Available ventilators: {{avilableVentilators}}</p>
@@ -19,7 +19,7 @@ export default {
     },
 
     props: {
-        patiants: Number,
+        patients: Number,
         avilableBeds: Number,
         ventilators: Number,
         avilableVentilators: Number,
@@ -43,7 +43,7 @@ export default {
     border-radius: 2vh;
     color: black;
     font-size: 3vh;
-    width: 70%;
+    width: 90%;
     height: 100%;
 }
 
