@@ -1,4 +1,5 @@
 <template>
+
   <v-app id="app">
     <v-container>
     <h1 class="first-title">GoldView</h1>
