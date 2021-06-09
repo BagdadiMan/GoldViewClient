@@ -15,7 +15,7 @@ export default {
     },
     data: () => {
         return {
-            items:[{sickness:1,title:12},{sickness:1,title:43},{sickness:1,title:24},{sickness:3,title:1}]
+            items:[]
         }
     }
 }
