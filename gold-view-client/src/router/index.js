@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Hospital from '../views/Hospital.vue'
 import Home from '../views/Home.vue'
-import Department from '../views/Department.vue'
 import Room from '../views/Room.vue'
 import DataView from '../views/DataView.vue'
 
@@ -18,12 +16,12 @@ const routes = [
 
     path: '/hospital/:id',
     name: 'Hospital',
-    component: Hospital
+    component: DataView
   },
   {
     path: '/hospital/:id/department/:dept',
     name: 'Department',
-    component: Department
+    component: DataView
   },
   {
     path: '/hospital/:id/department/:dept/room/:room',

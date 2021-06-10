@@ -1,8 +1,8 @@
 <template>
     <v-container fluid class="content align-center">
         <v-row justify="space-around">
-            <v-col md="4" sm class="container" v-for="hospital in hospitals" :key="hospital">
-                 <router-link class="hospital-text" to="/dataView">
+            <v-col md="4" sm class="container" v-for="hospital in hospitals" :key="hospital.id">
+                 <router-link class="hospital-text" :to="`/hospital/${hospital.id}`">
                     <hospitalName  :name="hospital.name"></hospitalName>
                  </router-link>
             </v-col>
@@ -12,6 +12,7 @@
 
 <script>
 import hospitalName from '../components/HospitalName.vue'
+import api from "../api/api";
 
 export default {
     name: "home",
@@ -20,7 +21,7 @@ export default {
     },
     data() {
         return {
-            hospitals: [{name: "A", id: 0}, {name: "A", id: 0}, {name: "A", id: 0}, {name: "A", id: 0}, {name: "A", id: 0}, {name: "A", id: 0}],
+            hospitals: [{name:"0", id: 0}],
         }
     },
     props: {
@@ -28,10 +29,10 @@ export default {
 
     computed: {
     },
-
-    created() {
-        // setTimeout(() => { this.isLoading = false }, 1000)
-    }
+    async mounted() {
+        const response = await api.hospitals().getHospitals();
+        this.hospitals = response.data;
+    },
 }
 </script>
 
