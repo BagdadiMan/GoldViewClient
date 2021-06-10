@@ -30,6 +30,7 @@ const routes = [
     name: 'Room',
     component: Room
   },
+  {
     path: '/dataView',
     name: 'dataView',
     component: DataView
