@@ -1,8 +1,9 @@
 <template>
-  <div>
+  <v-container fluid class="content align-center">
+
       <v-row>
 
-      <v-col v-for="item in items" :key="item.name">
+      <v-col class="container" v-for="item in items" :key="item.name">
       <v-card  style="background: #E0E0E0;" class="mx-auto" max-width="150">
         <font-awesome-icon icon="external-link-alt" style="margin-left: 135px;" />
         <v-card-text class="text-center black--text">
@@ -20,7 +21,7 @@
       </v-card>
       </v-col>
       </v-row>
-  </div>
+  </v-container>
 </template>
 
 <script>
@@ -45,3 +46,22 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.content {
+    width: 50%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.text {
+    font-size: 2vh;
+}
+
+.hospital-text {
+    text-decoration: none;
+}
+</style>

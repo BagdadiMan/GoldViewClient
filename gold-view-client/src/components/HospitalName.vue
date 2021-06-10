@@ -40,5 +40,8 @@ export default {
     display: flex;
     justify-items: center;
     align-items: center;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
 }
 </style>

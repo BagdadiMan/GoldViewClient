@@ -1,18 +1,18 @@
 <template>
+<div class="all-row">
+    <div @click="goBack" class="back">
+        <p class="my-button">back</p>
+    </div>
     <div class="hospital-data">
-        <div class="data">
-            <!-- <div class="controls">
-                BACK
-            </div> -->
-            <DataContainer 
-            :name="name" 
-            :ventilators="ventilators" 
-            :avilableVentilators="avilableVentilators" 
-            :patiants="patiants" 
-            :avilableBeds="avilableBeds"></DataContainer>
-        </div>
+        <DataContainer 
+        :name="name" 
+        :ventilators="ventilators" 
+        :avilableVentilators="avilableVentilators" 
+        :patiants="patiants" 
+        :avilableBeds="avilableBeds"></DataContainer>
         <SideView :title="getType" :items="items"></SideView>
     </div>
+</div>
 </template>
 
 <script>
@@ -47,7 +47,7 @@ export default {
                 return "department";
             } 
              return "room";
-        }
+        },
     },
      async created() {
         if(this.$route.name == "Hospital"){
@@ -68,8 +68,10 @@ export default {
         }
     },
 
-    creatded() {
-        // setTimeout(() => { this.isLoading = false }, 1000)
+    methods: {
+        goBack() {
+            this.$router.go(-1);
+        }
     }
 }
 </script>
@@ -92,5 +94,22 @@ export default {
 .controls {
     width: 100%;
     text-align: left;
+}
+
+.back {
+    font-size: 4vh;
+    float: left;
+}
+
+.all-row {
+    display: flex;
+    flex-flow: column;
+}
+
+.my-button {
+    cursor: pointer;
+    float: left;
+    margin-left: 4%;
+
 }
 </style>
