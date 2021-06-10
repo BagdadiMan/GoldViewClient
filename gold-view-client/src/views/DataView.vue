@@ -1,9 +1,9 @@
 <template>
     <div class="hospital-data">
         <div class="data">
-            <div class="controls">
+            <!-- <div class="controls">
                 BACK
-            </div>
+            </div> -->
             <DataContainer 
             :name="name" 
             :ventilators="ventilators" 
@@ -18,6 +18,7 @@
 <script>
 import DataContainer from "../components/DataContainer.vue"
 import SideView from '../components/SideView'
+import api from "../api/api";
 
 export default {
     name: "hospital",
@@ -31,7 +32,7 @@ export default {
             avilableVentilators: 34,
             patiants: 23,
             avilableBeds: 567,
-            items: [{title: 24}, {title: 74}, {title: 94}, {title: 34}]
+            items: []
         }
     },
     props: {
@@ -48,8 +49,26 @@ export default {
              return "room";
         }
     },
+     async created() {
+        if(this.$route.name == "Hospital"){
+            const response = await api.departments().getDepartmentsByHospitalID(this.$route.params.id);
+            this.items = response.data;
+        } else if(this.$route.name == "Department"){
+            const response = await api.rooms().getRoomsByDepartmentID(this.$route.params.dept);
+            this.items = response.data;
+        }
+    },
+    async updated() {
+        if(this.$route.name == "Hospital"){
+            const response = await api.departments().getDepartmentsByHospitalID(this.$route.params.id);
+            this.items = response.data;
+        } else if(this.$route.name == "Department"){
+            const response = await api.rooms().getRoomsByDepartmentID(this.$route.params.dept);
+            this.items = response.data;
+        }
+    },
 
-    created() {
+    creatded() {
         // setTimeout(() => { this.isLoading = false }, 1000)
     }
 }
